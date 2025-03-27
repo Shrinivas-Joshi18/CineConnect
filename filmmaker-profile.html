@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filmmaker Profile - CineConnect</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">Cine<span>Connect</span></div>
+        <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="artists.html">Artists</a></li>
+            <li><a href="auditions.html">Auditions</a></li>
+            <li><a href="rentals.html">Rentals</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="auth-buttons">
+            <button onclick="window.location.href='login.html'">Logout</button>
+        </div>
+    </nav>
+
+    <!-- Profile Container -->
+    <div class="profile-container">
+        <!-- Profile Header -->
+        <div class="profile-header">
+            <h1>Filmmaker Profile</h1>
+            <button class="edit-profile-btn" onclick="openEditProfileModal()">
+                <i class="fas fa-edit"></i> Edit Profile
+            </button>
+        </div>
+
+        <!-- Profile Overview -->
+        <div class="profile-overview">
+            <div class="profile-image-container">
+                <img src="images/placeholder-profile.jpg" alt="Profile Image" id="profileImage">
+                <button class="change-image-btn" onclick="document.getElementById('imageInput').click()">
+                    <i class="fas fa-camera"></i> Change Photo
+                </button>
+                <input type="file" id="imageInput" accept="image/*" style="display: none" onchange="updateProfileImage(this)">
+            </div>
+            <div class="profile-info">
+                <h2 id="filmmakerName">Jane Smith</h2>
+                <p><i class="fas fa-envelope"></i> <span id="filmmakerEmail">jane.smith@example.com</span></p>
+                <p><i class="fas fa-phone"></i> <span id="filmmakerPhone">+1 234 567 8900</span></p>
+                <p><i class="fas fa-map-marker-alt"></i> <span id="filmmakerLocation">Los Angeles, CA</span></p>
+                <p><i class="fas fa-star"></i> <span id="filmmakerRating">4.9/5.0</span></p>
+            </div>
+        </div>
+
+        <!-- Profile Details -->
+        <div class="profile-details">
+            <h3>About Me</h3>
+            <p id="filmmakerBio">Independent filmmaker with 8 years of experience in documentary and short film production. Passionate about storytelling and visual arts.</p>
+
+            <h3>Specializations</h3>
+            <div class="skills-grid" id="filmmakerSkills">
+                <span class="skill-tag">Documentary</span>
+                <span class="skill-tag">Short Films</span>
+                <span class="skill-tag">Cinematography</span>
+                <span class="skill-tag">Video Editing</span>
+            </div>
+
+            <h3>Current Projects</h3>
+            <div class="projects-grid" id="currentProjects">
+                <!-- Projects will be added dynamically -->
+            </div>
+
+            <h3>Equipment Owned</h3>
+            <div class="equipment-grid" id="equipmentList">
+                <!-- Equipment items will be added dynamically -->
+            </div>
+
+            <h3>Rental History</h3>
+            <div class="rental-history" id="rentalHistory">
+                <!-- Rental history will be added dynamically -->
+            </div>
+
+            <h3>Social Media</h3>
+            <div class="social-links">
+                <a href="#" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+                <a href="#" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="#" target="_blank"><i class="fab fa-vimeo-v"></i> Vimeo</a>
+            </div>
+        </div>
+
+        <!-- Recent Activity -->
+        <div class="recent-activity">
+            <h3>Recent Activity</h3>
+            <div class="activity-feed" id="activityFeed">
+                <!-- Activity items will be added dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Profile Modal -->
+    <div id="editProfileModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeEditProfileModal()">&times;</span>
+            <h2>Edit Profile</h2>
+            <form id="editProfileForm" onsubmit="saveProfileChanges(event)">
+                <div class="form-group">
+                    <label for="editName">Full Name</label>
+                    <input type="text" id="editName" required>
+                </div>
+                <div class="form-group">
+                    <label for="editEmail">Email</label>
+                    <input type="email" id="editEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="editPhone">Phone</label>
+                    <input type="tel" id="editPhone" required>
+                </div>
+                <div class="form-group">
+                    <label for="editLocation">Location</label>
+                    <input type="text" id="editLocation" required>
+                </div>
+                <div class="form-group">
+                    <label for="editBio">Bio</label>
+                    <textarea id="editBio" rows="4" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Specializations</label>
+                    <div class="skills-input-container">
+                        <input type="text" id="skillInput" placeholder="Add a specialization">
+                        <button type="button" onclick="addSkill()">Add</button>
+                    </div>
+                    <div id="skillsList" class="skills-list"></div>
+                </div>
+                <div class="form-group">
+                    <label>Equipment</label>
+                    <div class="equipment-input-container">
+                        <input type="text" id="equipmentInput" placeholder="Add equipment">
+                        <button type="button" onclick="addEquipment()">Add</button>
+                    </div>
+                    <div id="equipmentList" class="equipment-list"></div>
+                </div>
+                <button type="submit" class="submit-btn">Save Changes</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 

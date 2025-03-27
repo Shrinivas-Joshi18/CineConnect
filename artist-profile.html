@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artist Profile - CineConnect</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">Cine<span>Connect</span></div>
+        <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="auditions.html">Auditions</a></li>
+            <li><a href="rentals.html">Rentals</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="auth-buttons">
+            <button onclick="handleLogout()">Logout</button>
+        </div>
+    </nav>
+
+    <!-- Profile Container -->
+    <div class="profile-container">
+        <div class="profile-header">
+            <h1>My Profile</h1>
+            <button class="edit-profile-btn" id="editProfileBtn">
+                <i class="fas fa-edit"></i> Edit Profile
+            </button>
+        </div>
+
+        <div class="profile-overview">
+            <div class="profile-image-container">
+                <img src="images/profile-placeholder.jpg" alt="Profile Picture" id="profileImage">
+                <button class="change-image-btn" onclick="document.getElementById('profileImageInput').click()">
+                    <i class="fas fa-camera"></i> Change Photo
+                </button>
+                <input type="file" id="profileImageInput" accept="image/*" style="display: none;" onchange="updateProfileImage(event)">
+            </div>
+            <div class="profile-info">
+                <h2 id="profileName">Loading...</h2>
+                <p><i class="fas fa-envelope"></i> <span id="profileEmail">Loading...</span></p>
+                <p><i class="fas fa-phone"></i> <span id="profilePhone">Loading...</span></p>
+                <p><i class="fas fa-map-marker-alt"></i> <span id="profileLocation">Loading...</span></p>
+                <p><i class="fas fa-star"></i> <span id="profileRating">Loading...</span></p>
+            </div>
+        </div>
+
+        <div class="profile-details">
+            <h3>About Me</h3>
+            <p id="profileBio">Loading...</p>
+        </div>
+
+        <div class="profile-details">
+            <h3>Skills</h3>
+            <div class="skills-grid" id="profileSkills">
+                <!-- Skills will be added here dynamically -->
+            </div>
+        </div>
+
+        <div class="profile-details">
+            <h3>Portfolio</h3>
+            <div class="portfolio-grid" id="profilePortfolio">
+                <!-- Portfolio items will be added here dynamically -->
+            </div>
+        </div>
+
+        <div class="profile-details">
+            <h3>Recent Activity</h3>
+            <div class="activity-feed" id="profileActivity">
+                <!-- Activity items will be added here dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Profile Modal -->
+    <div id="editProfileModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeEditProfile">&times;</span>
+            <h2>Edit Profile</h2>
+            <form id="editProfileForm">
+                <div class="form-group">
+                    <label for="editName">Name</label>
+                    <input type="text" id="editName" required>
+                </div>
+                <div class="form-group">
+                    <label for="editEmail">Email</label>
+                    <input type="email" id="editEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="editPhone">Phone</label>
+                    <input type="tel" id="editPhone" required>
+                </div>
+                <div class="form-group">
+                    <label for="editLocation">Location</label>
+                    <input type="text" id="editLocation" required>
+                </div>
+                <div class="form-group">
+                    <label for="editBio">Bio</label>
+                    <textarea id="editBio" rows="4" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="editSkills">Skills</label>
+                    <div class="skills-input-container">
+                        <input type="text" id="editSkills" placeholder="Add a skill">
+                        <button type="button" id="addSkillBtn">Add</button>
+                    </div>
+                    <div class="skills-list" id="skillsList">
+                        <!-- Skills will be added here dynamically -->
+                    </div>
+                </div>
+                <button type="submit" class="submit-btn">Save Changes</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 

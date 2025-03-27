@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CineConnect Network - Home</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">CINE<span>CONNECT</span></div>
+      <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="artists.html">Artists</a></li>
+        <li><a href="auditions.html">Auditions</a></li>
+        <li><a href="rentals.html">Rentals</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="auth-buttons">
+        <button id="loginBtn">Login</button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section with Background Image -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Connect, Create, Inspire</h1>
+      <p>Bringing talented artists and visionary filmmakers together.</p>
+      <div class="cta">
+        <button id="artistJoin" onclick="window.location.href='login.html?type=artist'">Join as Artist</button>
+        <button id="filmMakerJoin" onclick="window.location.href='login.html?type=filmmaker'">Join as Filmmaker</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Optional Additional Content -->
+  <section class="section">
+    <h2>Welcome to CineConnect Network</h2>
+    <p>Your gateway to connect with creative talents and opportunities.</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-logo">CineConnect</div>
+      <ul class="footer-links">
+        <li><a href="#">Terms</a></li>
+        <li><a href="#">Privacy</a></li>
+        <li><a href="#">Support</a></li>
+      </ul>
+      <p>&copy; 2025 CineConnect. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Login Modal -->
+  <div id="loginModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="loginClose">&times;</span>
+      <h2>Login</h2>
+      <form id="loginForm">
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+        <p>Don't have an account? <a href="#" onclick="document.getElementById('loginModal').style.display='none'; document.getElementById('signupModal').style.display='block'">Sign up</a></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- Signup Modal -->
+  <div id="signupModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="signupClose">&times;</span>
+      <h2>Sign Up</h2>
+      <form id="signupForm">
+        <input type="text" placeholder="Name" required>
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Password" required>
+        <input type="password" placeholder="Confirm Password" required>
+        <select name="userType" required>
+          <option value="">Select User Type</option>
+          <option value="artist">Artist</option>
+          <option value="filmmaker">Filmmaker</option>
+        </select>
+        <button type="submit">Sign Up</button>
+        <p>Already have an account? <a href="#" onclick="document.getElementById('signupModal').style.display='none'; document.getElementById('loginModal').style.display='block'">Login</a></p>
+      </form>
+    </div>
+  </div>
+  <!-- Replace the old Firebase scripts with new ones -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+    import { getAuth } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+    import { getDatabase } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyA_0mH1wjacrtiCm8kSiT18DQU7tNyPoSM",
+      authDomain: "cineconnect-8eec2.firebaseapp.com",
+      databaseURL: "https://cineconnect-8eec2-default-rtdb.firebaseio.com",
+      projectId: "cineconnect-8eec2",
+      storageBucket: "cineconnect-8eec2.firebasestorage.app",
+      messagingSenderId: "393197311527",
+      appId: "1:393197311527:web:7f20e06456f133afc76002",
+      measurementId: "G-D0RR6VV66J"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const database = getDatabase(app);
+
+    // Make auth and database available globally
+    window.auth = auth;
+    window.database = database;
+  </script>
+
+  <!-- Remove the old Firebase scripts -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/9.19.1/firebase-app-compat.min.js"></script> -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/9.19.1/firebase-auth-compat.min.js"></script> -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/9.19.1/firebase-database-compat.min.js"></script> -->
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>

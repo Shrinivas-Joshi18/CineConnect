@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - CineConnect</title>
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-database.js"></script>
+    <script src="firebase-config.js"></script>
+    <script src="auth.js"></script>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">Cine<span>Connect</span></div>
+        <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="artists.html">Artists</a></li>
+            <li><a href="auditions.html">Auditions</a></li>
+            <li><a href="rentals.html">Rentals</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="auth-buttons">
+            <button id="logoutBtn">Logout</button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="profile-container">
+        <div class="profile-header">
+            <h1>My Profile</h1>
+            <button id="editProfileBtn" class="edit-profile-btn">Edit Profile</button>
+        </div>
+
+        <div class="profile-content">
+            <!-- Profile Overview -->
+            <section class="profile-overview">
+                <div class="profile-image-container">
+                    <img id="profileImage" src="placeholder-profile.jpg" alt="Profile Image">
+                    <button id="changeImageBtn" class="change-image-btn">Change Photo</button>
+                </div>
+                <div class="profile-info">
+                    <h2 id="profileName">Loading...</h2>
+                    <p id="profileSpecialization" class="specialization">Loading...</p>
+                    <p id="profileLocation" class="location">Loading...</p>
+                    <p id="profileExperience" class="experience">Loading...</p>
+                </div>
+            </section>
+
+            <!-- Profile Details -->
+            <section class="profile-details">
+                <h3>About Me</h3>
+                <p id="profileBio">Loading...</p>
+
+                <h3>Skills</h3>
+                <div id="profileSkills" class="skills-grid">
+                    <!-- Skills will be added here -->
+                </div>
+
+                <h3>Portfolio</h3>
+                <div id="portfolioLinks" class="portfolio-links">
+                    <!-- Portfolio links will be added here -->
+                </div>
+
+                <h3>Social Media</h3>
+                <div id="socialLinks" class="social-links">
+                    <!-- Social media links will be added here -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Edit Profile Modal -->
+    <div id="editProfileModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="editProfileClose">&times;</span>
+            <h2>Edit Profile</h2>
+            <form id="editProfileForm">
+                <div class="form-group">
+                    <label for="editName">Full Name</label>
+                    <input type="text" id="editName" required>
+                </div>
+                <div class="form-group">
+                    <label for="editSpecialization">Specialization</label>
+                    <input type="text" id="editSpecialization" required>
+                </div>
+                <div class="form-group">
+                    <label for="editLocation">Location</label>
+                    <input type="text" id="editLocation" required>
+                </div>
+                <div class="form-group">
+                    <label for="editExperience">Years of Experience</label>
+                    <input type="number" id="editExperience" min="0" required>
+                </div>
+                <div class="form-group">
+                    <label for="editBio">Bio</label>
+                    <textarea id="editBio" rows="4" required></textarea>
+                </div>
+                <button type="submit">Save Changes</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2024 CineConnect. All rights reserved.</p>
+            <ul class="footer-links">
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

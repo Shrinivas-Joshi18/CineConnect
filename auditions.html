@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CineConnect Network - Auditions</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">CINE<span>CONNECT</span></div>
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="artists.html">Artists</a></li>
+        <li><a href="auditions.html">Auditions</a></li>
+        <li><a href="rentals.html">Rentals</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="auth-buttons">
+        <button onclick="window.location.href='login.html'">Login</button>
+      </div>
+    </nav>
+  </header>
+  
+  <!-- Main Content for Auditions Page -->
+  <section class="section">
+    <h2>Auditions</h2>
+    <p>Discover exciting opportunities in the film industry. Browse through current audition calls or post your own.</p>
+    
+    <!-- Post Audition Button (visible only to logged-in filmmakers) -->
+    <div class="action-buttons">
+      <button class="post-audition-btn">Post New Audition</button>
+    </div>
+
+    <!-- Audition Filters -->
+    <div class="filters">
+      <select class="category-filter">
+        <option value="">All Categories</option>
+        <option value="actor">Actors</option>
+        <option value="singer">Singers</option>
+        <option value="dancer">Dancers</option>
+        <option value="fighter">Fighters</option>
+        <option value="voice">Voice-Over Artists</option>
+        <option value="technician">Technicians</option>
+      </select>
+      <input type="text" class="search-input" placeholder="Search auditions...">
+    </div>
+
+    <!-- Auditions Grid -->
+    <div class="auditions-grid">
+      <!-- Audition Card -->
+      <div class="audition-card">
+        <div class="audition-header">
+          <h3>Lead Actor - Feature Film</h3>
+          <span class="category-tag">Actor</span>
+        </div>
+        <div class="audition-details">
+          <p class="project-title">Project: "The Last Journey"</p>
+          <p class="location">Location: Mumbai, India</p>
+          <p class="date">Audition Date: March 15, 2024</p>
+          <p class="compensation">Compensation: ₹50,000 per day</p>
+        </div>
+        <div class="requirements">
+          <h4>Requirements:</h4>
+          <ul>
+            <li>Age: 25-35 years</li>
+            <li>Height: 5'8" - 6'0"</li>
+            <li>Experience: 3+ years</li>
+            <li>Languages: Hindi, English</li>
+          </ul>
+        </div>
+        <div class="audition-actions">
+          <button class="apply-btn">Apply Now</button>
+          <button class="save-btn">Save</button>
+        </div>
+      </div>
+
+      <!-- Audition Card -->
+      <div class="audition-card">
+        <div class="audition-header">
+          <h3>Background Dancer - Music Video</h3>
+          <span class="category-tag">Dancer</span>
+        </div>
+        <div class="audition-details">
+          <p class="project-title">Project: "Summer Vibes" Music Video</p>
+          <p class="location">Location: Bangalore, India</p>
+          <p class="date">Audition Date: March 20, 2024</p>
+          <p class="compensation">Compensation: ₹15,000 per day</p>
+        </div>
+        <div class="requirements">
+          <h4>Requirements:</h4>
+          <ul>
+            <li>Age: 18-25 years</li>
+            <li>Dance Styles: Hip-hop, Contemporary</li>
+            <li>Experience: 2+ years</li>
+            <li>Group coordination skills</li>
+          </ul>
+        </div>
+        <div class="audition-actions">
+          <button class="apply-btn">Apply Now</button>
+          <button class="save-btn">Save</button>
+        </div>
+      </div>
+
+      <!-- Audition Card -->
+      <div class="audition-card">
+        <div class="audition-header">
+          <h3>Voice-Over Artist - Documentary</h3>
+          <span class="category-tag">Voice-Over</span>
+        </div>
+        <div class="audition-details">
+          <p class="project-title">Project: "Wild India" Documentary</p>
+          <p class="location">Location: Remote</p>
+          <p class="date">Submission Deadline: March 25, 2024</p>
+          <p class="compensation">Compensation: ₹30,000 per episode</p>
+        </div>
+        <div class="requirements">
+          <h4>Requirements:</h4>
+          <ul>
+            <li>Age: 30-45 years</li>
+            <li>Voice Type: Deep, authoritative</li>
+            <li>Experience: 5+ years</li>
+            <li>Home recording setup</li>
+          </ul>
+        </div>
+        <div class="audition-actions">
+          <button class="apply-btn">Apply Now</button>
+          <button class="save-btn">Save</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-logo">CineConnect</div>
+      <ul class="footer-links">
+        <li><a href="#">Terms</a></li>
+        <li><a href="#">Privacy</a></li>
+        <li><a href="#">Support</a></li>
+      </ul>
+      <p>&copy; 2025 CineConnect. All Rights Reserved.</p>
+    </div>
+  </footer>
+  
+  <!-- Login Modal -->
+  <div id="loginModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="loginClose">&times;</span>
+      <h2>Login</h2>
+      <form id="loginForm">
+        <input type="email" placeholder="Email" required />
+        <input type="password" placeholder="Password" required />
+        <button type="submit">Login</button>
+      </form>
+    </div>
+  </div>
+  
+  <!-- Signup Modal -->
+  <div id="signupModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="signupClose">&times;</span>
+      <h2>Sign Up</h2>
+      <form id="signupForm">
+        <input type="text" placeholder="Name" required />
+        <input type="email" placeholder="Email" required />
+        <input type="password" placeholder="Password" required />
+        <button type="submit">Sign Up</button>
+      </form>
+    </div>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>

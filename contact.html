@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact - CineConnect</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">Cine<span>Connect</span></div>
+    <ul class="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="artists.html">Artists</a></li>
+      <li><a href="auditions.html">Auditions</a></li>
+      <li><a href="rentals.html">Rentals</a></li>
+      <li><a href="profile.html">Profile</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="auth-buttons">
+      <button onclick="window.location.href='login.html'">Login</button>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="contact-container">
+    <div class="contact-header">
+      <h1>Contact Us</h1>
+      <p>Get in touch with us for any questions or support</p>
+    </div>
+
+    <div class="contact-content">
+      <!-- Contact Information -->
+      <section class="contact-info">
+        <div class="info-card">
+          <div class="info-icon">📍</div>
+          <h3>Address</h3>
+          <p>123 Film Street</p>
+          <p>Entertainment District</p>
+          <p>Mumbai, Maharashtra 400001</p>
+        </div>
+        <div class="info-card">
+          <div class="info-icon">📞</div>
+          <h3>Phone</h3>
+          <p>+91 123 456 7890</p>
+          <p>+91 987 654 3210</p>
+          <p>Mon-Fri: 9:00 AM - 6:00 PM</p>
+        </div>
+        <div class="info-card">
+          <div class="info-icon">✉️</div>
+          <h3>Email</h3>
+          <p>support@cineconnect.com</p>
+          <p>info@cineconnect.com</p>
+          <p>careers@cineconnect.com</p>
+        </div>
+      </section>
+
+      <!-- Contact Form -->
+      <section class="contact-form-section">
+        <h2>Send us a Message</h2>
+        <form id="contactForm" class="contact-form">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" required>
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <select id="subject" required>
+              <option value="">Select a subject</option>
+              <option value="general">General Inquiry</option>
+              <option value="support">Technical Support</option>
+              <option value="business">Business Partnership</option>
+              <option value="careers">Careers</option>
+              <option value="feedback">Feedback</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+      </section>
+
+      <!-- FAQ Section -->
+      <section class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>How do I create an account?</h3>
+              <span class="toggle-icon">+</span>
+            </div>
+            <div class="faq-answer">
+              <p>Click the "Sign Up" button in the top right corner and follow the registration process. You'll need to provide your email, create a password, and verify your account.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>How can I post an audition?</h3>
+              <span class="toggle-icon">+</span>
+            </div>
+            <div class="faq-answer">
+              <p>After logging in, go to the Auditions page and click the "Post New Audition" button. Fill in the required details and submit your posting.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>How do I apply for auditions?</h3>
+              <span class="toggle-icon">+</span>
+            </div>
+            <div class="faq-answer">
+              <p>Browse through available auditions, click on the one you're interested in, and use the "Apply" button to submit your application with your details and portfolio.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>What payment methods do you accept?</h3>
+              <span class="toggle-icon">+</span>
+            </div>
+            <div class="faq-answer">
+              <p>We accept all major credit cards, UPI, and bank transfers. Payment details will be provided during the booking process.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <p>&copy; 2024 CineConnect. All rights reserved.</p>
+      <ul class="footer-links">
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Login Modal -->
+  <div id="loginModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="loginClose">&times;</span>
+      <h2>Login</h2>
+      <form id="loginForm">
+        <input type="email" placeholder="Email" required />
+        <input type="password" placeholder="Password" required />
+        <button type="submit">Login</button>
+      </form>
+    </div>
+  </div>
+  
+  <!-- Signup Modal -->
+  <div id="signupModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="signupClose">&times;</span>
+      <h2>Sign Up</h2>
+      <form id="signupForm">
+        <input type="text" placeholder="Name" required />
+        <input type="email" placeholder="Email" required />
+        <input type="password" placeholder="Password" required />
+        <button type="submit">Sign Up</button>
+      </form>
+    </div>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>

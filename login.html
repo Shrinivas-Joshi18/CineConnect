@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - CineConnect</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Firebase SDK -->
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">Cine<span>Connect</span></div>
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="artists.html">Artists</a></li>
+            <li><a href="auditions.html">Auditions</a></li>
+            <li><a href="rentals.html">Rentals</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Login Container -->
+    <div class="login-container">
+        <div class="login-header">
+            <h1>Welcome to CineConnect</h1>
+            <p>Choose your account type to continue</p>
+        </div>
+
+        <div class="login-options">
+            <!-- Artists & Rentals Login -->
+            <div class="login-card">
+                <div class="login-icon">🎭</div>
+                <h2>Artists & Rentals</h2>
+                <p>For actors, musicians, equipment providers, and location owners</p>
+                <button class="login-type-btn" data-type="artist">Login as Artist/Rental Provider</button>
+            </div>
+
+            <!-- Filmmakers Login -->
+            <div class="login-card">
+                <div class="login-icon">🎬</div>
+                <h2>Filmmakers</h2>
+                <p>For directors, producers, and production houses</p>
+                <button class="login-type-btn" data-type="filmmaker">Login as Filmmaker</button>
+            </div>
+        </div>
+
+        <!-- Login Forms -->
+        <div class="login-forms">
+            <!-- Artist Login Form -->
+            <div id="artistLoginForm" class="login-form" style="display: none;">
+                <h2>Artist Login</h2>
+                <form id="artistForm">
+                    <div class="form-group">
+                        <label for="artistEmail">Email</label>
+                        <input type="email" id="artistEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="artistPassword">Password</label>
+                        <input type="password" id="artistPassword" required>
+                    </div>
+                    <button type="submit">Login</button>
+                </form>
+                <p>Don't have an account? <a href="#" id="artistSignupLink">Sign Up</a></p>
+            </div>
+
+            <!-- Filmmaker Login Form -->
+            <div id="filmmakerLoginForm" class="login-form" style="display: none;">
+                <h2>Filmmaker Login</h2>
+                <form id="filmmakerForm">
+                    <div class="form-group">
+                        <label for="filmmakerEmail">Email</label>
+                        <input type="email" id="filmmakerEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="filmmakerPassword">Password</label>
+                        <input type="password" id="filmmakerPassword" required>
+                    </div>
+                    <button type="submit">Login</button>
+                </form>
+                <p>Don't have an account? <a href="#" id="filmmakerSignupLink">Sign Up</a></p>
+            </div>
+        </div>
+
+        <!-- Signup Forms -->
+        <div class="signup-forms">
+            <!-- Artist Signup Form -->
+            <div class="signup-form" id="artistSignupForm" style="display: none;">
+                <h2>Artist & Rental Provider Signup</h2>
+                <form id="artistSignup">
+                    <div class="form-group">
+                        <label for="artistSignupName">Full Name</label>
+                        <input type="text" id="artistSignupName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="artistSignupEmail">Email</label>
+                        <input type="email" id="artistSignupEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="artistSignupPassword">Password</label>
+                        <input type="password" id="artistSignupPassword" required>
+                    </div>
+                    <button type="submit">Sign Up</button>
+                </form>
+            </div>
+
+            <!-- Filmmaker Signup Form -->
+            <div class="signup-form" id="filmmakerSignupForm" style="display: none;">
+                <h2>Filmmaker Signup</h2>
+                <form id="filmmakerSignup">
+                    <div class="form-group">
+                        <label for="filmmakerSignupName">Full Name</label>
+                        <input type="text" id="filmmakerSignupName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="filmmakerSignupEmail">Email</label>
+                        <input type="email" id="filmmakerSignupEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="filmmakerSignupPassword">Password</label>
+                        <input type="password" id="filmmakerSignupPassword" required>
+                    </div>
+                    <button type="submit">Sign Up</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Firebase App (Always Required) -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js"></script>
+
+    <!-- Firebase Authentication -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js"></script>
+
+    <!-- Firebase Database (if needed) -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js"></script>
+    <script type="module" src="login.js"></script>
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CineConnect Network - Rentals</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">CINE<span>CONNECT</span></div>
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="artists.html">Artists</a></li>
+        <li><a href="auditions.html">Auditions</a></li>
+        <li><a href="rentals.html">Rentals</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="auth-buttons">
+        <button onclick="window.location.href='login.html'">Login</button>
+      </div>
+    </nav>
+  </header>
+  
+  <!-- Main Content for Rentals Page -->
+  <section class="section">
+    <h2>Rentals</h2>
+    <p>Find and rent professional equipment and shooting locations for your next project.</p>
+
+    <!-- Rental Categories -->
+    <div class="rental-categories">
+      <button class="category-btn active" data-category="all">All</button>
+      <button class="category-btn" data-category="instruments">Musical Instruments</button>
+      <button class="category-btn" data-category="locations">Shooting Locations</button>
+    </div>
+
+    <!-- Rental Filters -->
+    <div class="filters">
+      <select class="category-filter">
+        <option value="">All Categories</option>
+        <option value="guitar">Guitars</option>
+        <option value="piano">Pianos</option>
+        <option value="drums">Drums</option>
+        <option value="studio">Recording Studio</option>
+        <option value="indoor">Indoor Locations</option>
+        <option value="outdoor">Outdoor Locations</option>
+      </select>
+      <input type="text" class="search-input" placeholder="Search rentals...">
+    </div>
+
+    <!-- Rentals Grid -->
+    <div class="rentals-grid">
+      <!-- Musical Instrument Card -->
+      <div class="rental-card" data-category="instruments">
+        <div class="rental-image">
+          <img src="images/electric-guitar.jpg" alt="Professional Guitar">
+        </div>
+        <div class="rental-info">
+          <h3>Professional Electric Guitar</h3>
+          <p class="rental-type">Musical Instrument</p>
+          <div class="rental-details">
+            <p class="price">₹1,500/day</p>
+            <p class="location">Available in: Mumbai</p>
+            <p class="condition">Condition: Excellent</p>
+          </div>
+          <div class="rental-features">
+            <span>Fender Stratocaster</span>
+            <span>Professional Grade</span>
+            <span>Includes Case</span>
+          </div>
+          <button class="rent-btn">Rent Now</button>
+        </div>
+      </div>
+
+      <!-- Shooting Location Card -->
+      <div class="rental-card" data-category="locations">
+        <div class="rental-image">
+          <img src="images/record-studio.jpeg" alt="Professional Studio">
+        </div>
+        <div class="rental-info">
+          <h3>Professional Recording Studio</h3>
+          <p class="rental-type">Shooting Location</p>
+          <div class="rental-details">
+            <p class="price">₹5,000/hour</p>
+            <p class="location">Location: Bangalore</p>
+            <p class="size">Size: 500 sq ft</p>
+          </div>
+          <div class="rental-features">
+            <span>Soundproof</span>
+            <span>Professional Equipment</span>
+            <span>Parking Available</span>
+          </div>
+          <button class="rent-btn">Book Now</button>
+        </div>
+      </div>
+
+      <!-- Musical Instrument Card -->
+      <div class="rental-card" data-category="instruments">
+        <div class="rental-image">
+          <img src="images/grand-piono.jpg" alt="Grand Piano">
+        </div>
+        <div class="rental-info">
+          <h3>Grand Piano</h3>
+          <p class="rental-type">Musical Instrument</p>
+          <div class="rental-details">
+            <p class="price">₹3,000/day</p>
+            <p class="location">Available in: Delhi</p>
+            <p class="condition">Condition: Like New</p>
+          </div>
+          <div class="rental-features">
+            <span>Yamaha Grand</span>
+            <span>Professional Grade</span>
+            <span>Delivery Available</span>
+          </div>
+          <button class="rent-btn">Rent Now</button>
+        </div>
+      </div>
+
+      <!-- Shooting Location Card -->
+      <div class="rental-card" data-category="locations">
+        <div class="rental-image">
+          <img src="images/Luxury-Mansion.jpg" alt="Luxury Mansion">
+        </div>
+        <div class="rental-info">
+          <h3>Luxury Mansion</h3>
+          <p class="rental-type">Shooting Location</p>
+          <div class="rental-details">
+            <p class="price">₹15,000/day</p>
+            <p class="location">Location: Hyderabad</p>
+            <p class="size">Size: 3,000 sq ft</p>
+          </div>
+          <div class="rental-features">
+            <span>Modern Architecture</span>
+            <span>Swimming Pool</span>
+            <span>Garden Area</span>
+          </div>
+          <button class="rent-btn">Book Now</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-logo">CineConnect</div>
+      <ul class="footer-links">
+        <li><a href="#">Terms</a></li>
+        <li><a href="#">Privacy</a></li>
+        <li><a href="#">Support</a></li>
+      </ul>
+      <p>&copy; 2025 CineConnect. All Rights Reserved.</p>
+    </div>
+  </footer>
+  
+  <!-- Login Modal -->
+  <div id="loginModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="loginClose">&times;</span>
+      <h2>Login</h2>
+      <form id="loginForm">
+        <input type="email" placeholder="Email" required />
+        <input type="password" placeholder="Password" required />
+        <button type="submit">Login</button>
+      </form>
+    </div>
+  </div>
+  
+  <!-- Signup Modal -->
+  <div id="signupModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="signupClose">&times;</span>
+      <h2>Sign Up</h2>
+      <form id="signupForm">
+        <input type="text" placeholder="Name" required />
+        <input type="email" placeholder="Email" required />
+        <input type="password" placeholder="Password" required />
+        <button type="submit">Sign Up</button>
+      </form>
+    </div>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>
